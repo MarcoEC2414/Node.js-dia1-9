@@ -8,10 +8,22 @@
     "limpiar": "cls",
     "reset": "cls && node app.js",
     "nombre": "echo 'hola marco' ",
-    "dev": "node --watch app.js"
+    "dev": "nodemon app.js"
   },
+
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs"
+  "type": "commonjs",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarcoEC2414/Node.js-dia1-9.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MarcoEC2414/Node.js-dia1-9/issues"
+  },
+  "homepage": "https://github.com/MarcoEC2414/Node.js-dia1-9#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
 }
