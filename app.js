@@ -1,14 +1,28 @@
-console.log("ESTE ES MI DIA 1");
+//------------------------
+// app.js — Punto de entrada del restaurante
+ 
+const nombreRestaurante = 'El Restaurante Node';
+const version = '1.0.0';
+ 
+function mostrarBienvenida(nombre, version) {
+    return `${nombre} v${version} — Backend iniciado`;
+}
+ 
 const menu = [
-    { id: 1, nombre: "Ceviche", precio: 25, categoria: "Entradas" },
-    { id: 2, nombre: "Lomo Saltado", precio: 30, categoria: "Segundos" },
-    { id: 3, nombre: "Chicha Morada", precio: 10, categoria: "Bebidas" }
+    { nombre: 'Lomo saltado', precio: 18, stock: 3 },
+    { nombre: 'Arroz con pollo', precio: 12, stock: 5 },
+    { nombre: 'Sopa', precio: 8, stock: 10 }
 ];
-const mostrarMenu = () => {
-    console.log("Mostrando menu")
-    console.table(menu);
+ 
+function mostrarMenu(menu) {
+    console.log('--- MENÚ DEL RESTAURANTE ---');
+       menu.forEach(plato => {
+        console.log(`${plato.nombre} — S/ ${plato.precio} — Stock: ${plato.stock}`);
+    });
 };
+console.log(mostrarBienvenida(nombreRestaurante, version));
+mostrarMenu(menu);
 
-mostrarMenu();
 
-console.log("Directorio actual:", __dirname);
+
+
