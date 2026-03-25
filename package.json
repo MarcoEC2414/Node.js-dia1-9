@@ -1,0 +1,17 @@
+{
+  "name": "proyectonode",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "limpiar": "cls",
+    "reset": "cls && node app.js",
+    "nombre": "echo 'hola marco' ",
+    "dev": "node --watch app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}
