@@ -1,0 +1,3 @@
+Durante el dia 1 se establecio la estructura base del proyecto, se configuro
+el entorno de desarrollo y se implemento la logica principal cada uno trabajamos 
+en nuestro rpositorio y evaluamos al final.

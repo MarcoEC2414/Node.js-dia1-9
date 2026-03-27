@@ -9,9 +9,9 @@ function mostrarBienvenida(nombre, version) {
 }
  
 const menu = [
-    { nombre: 'Lomo saltado', precio: 18, stock: 3 },
-    { nombre: 'Arroz con pollo', precio: 12, stock: 5 },
-    { nombre: 'Sopa', precio: 8, stock: 10 }
+    { id: 1, nombre: 'Lomo saltado', precio: 18, stock: 3 },
+    { id: 2, nombre: 'Arroz con pollo', precio: 12, stock: 5 },
+    { id: 3, nombre: 'Sopa', precio: 8, stock: 10 }
 ];
  
 function mostrarMenu(menu) {
