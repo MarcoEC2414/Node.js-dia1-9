@@ -10,7 +10,6 @@
     "nombre": "echo 'hola marco' ",
     "dev": "nodemon app.js"
   },
-
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -23,10 +22,10 @@
     "url": "https://github.com/MarcoEC2414/Node.js-dia1-9/issues"
   },
   "homepage": "https://github.com/MarcoEC2414/Node.js-dia1-9#readme",
-
-
   "devDependencies": {
     "nodemon": "^3.1.14"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
   }
 }
-
