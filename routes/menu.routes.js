@@ -5,6 +5,7 @@ const menuController = require('../controllers/menu.controller');
 const { verificarDatosPlato } = require('../middlewares/logger');
   
 // GET /menu 
+router.get('/:id', menuController.buscarPlato); 
 router.get('/', menuController.obtenerMenu); 
   
 // GET /menu/buscar?nombre=xxx 

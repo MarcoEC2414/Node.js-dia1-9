@@ -4,6 +4,11 @@ const menuRouter = require('./routes/menu.routes');
 const { logger } = require('./middlewares/logger'); 
 const app = express(); 
 const PORT = 3000;
+const conectarDB = require('./database/connection'); 
+const Plato = require('./models/plato');
+// Conectar a MongoDB antes de levantar el servidor 
+conectarDB(); 
+
 
 app.use(express.json()); 
 app.use(logger);
@@ -17,7 +22,9 @@ app.get('/', (req, res) => {
         rutas: ['/menu'] 
     }); 
 }); 
+
   
+// ... resto del app.js sin cambios
 app.listen(PORT, () => { 
     console.log(`Restaurante corriendo en http://localhost:${PORT}`); 
 }); 
