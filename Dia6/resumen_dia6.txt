@@ -1,0 +1,39 @@
+DÍA 6 — VARIABLES DE ENTORNO Y CONFIGURACIÓN PROFESIONAL
+=========================================================
+
+¿QUÉ PROBLEMA RESUELVE?
+------------------------
+En el Día 5 quedaron valores sensibles hardcodeados en el código:
+- Puerto 3000 directo en app.js
+- URL de MongoDB directo en connection.js
+- JWT_SECRET con fallback débil en auth.service.js
+
+Si el repositorio es público, cualquiera ve esas credenciales.
+Las variables de entorno sacan esos valores del código y los
+ponen en un archivo .env que nunca sube a GitHub.
+
+¿QUÉ SE CONSTRUYÓ?
+-------------------
+.env              → valores reales y secretos, NUNCA sube a GitHub
+.env.example      → plantilla vacía, SÍ sube a GitHub como guía
+.gitignore        → excluye .env y node_modules del repositorio
+config/index.js   → carga dotenv y exporta las 3 variables
+
+ARCHIVOS ACTUALIZADOS
+---------------------
+database/connection.js  → usa mongoUri de config
+services/auth.service.js → usa jwtSecret de config
+app.js                  → usa port de config
+
+FLUJO DE LAS VARIABLES
+-----------------------
+.env → dotenv.config() en config/index.js → process.env
+     → exportado como { port, mongoUri, jwtSecret }
+     → importado en connection.js, auth.service.js y app.js
+
+REGLA CLAVE
+-----------
+- .env    → NUNCA a GitHub (datos reales)
+- .env.example → SÍ a GitHub (muestra qué variables se necesitan)
+- Un nuevo desarrollador clona el repo, copia .env.example
+  como .env y llena sus propios valores

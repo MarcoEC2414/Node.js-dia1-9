@@ -1,15 +1,14 @@
 // database/connection.js
-// Día 4 — Conexión a MongoDB con Mongoose
-const mongoose = require('mongoose');
+// Día 6 — usa mongoUri de config en lugar de process.env directo
+const mongoose       = require('mongoose');
+const { mongoUri }   = require('../config');
 
 const conectarDB = async () => {
   try {
-    // Usa la URI del .env (Día 6 la mueve a config/index.js)
-    await mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/restaurante');
+    await mongoose.connect(mongoUri);
     console.log('MongoDB conectado — restaurante');
   } catch (error) {
     console.error('Error de conexión:', error.message);
-    // Sin base de datos el servidor no tiene sentido — detener el proceso
     process.exit(1);
   }
 };
