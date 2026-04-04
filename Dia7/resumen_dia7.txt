@@ -1,0 +1,54 @@
+DÍA 7 — TESTING BÁSICO DEL RESTAURANTE
+========================================
+
+¿QUÉ PROBLEMA RESUELVE?
+------------------------
+En los días anteriores se probaba manualmente en Thunder Client.
+Eso funciona para aprender pero no escala — cada vez que cambias
+código tienes que volver a probar todo a mano.
+Un test verifica automáticamente que las rutas siguen funcionando
+cada vez que haces un cambio.
+
+¿QUÉ SE CONSTRUYÓ?
+-------------------
+test/menu.test.js  → tests de las rutas GET del menú
+test/auth.test.js  → tests de login y rutas protegidas
+app.js             → actualizado con module.exports para que
+                     supertest pueda usar la app sin servidor real
+
+HERRAMIENTAS
+------------
+node:test  → módulo integrado en Node.js 18+, no se instala
+assert     → módulo integrado, verifica resultados
+supertest  → se instala con npm, simula peticiones HTTP
+             sin necesitar que el servidor esté corriendo
+
+TESTS QUE SE CUBREN
+--------------------
+GET /menu                        → 200 + array
+GET /menu/buscar sin ?nombre=    → 400
+GET /menu/:id con id inválido    → 500
+GET /menu/categoria/Segundos     → 200 + array
+GET /menu/categoria/NoExiste     → 200 + array vacío
+POST /menu sin token             → 401
+PUT  /menu/:id sin token         → 401
+DELETE /menu/:id sin token       → 401
+GET /menu sin token              → 200 (ruta libre)
+Login con credenciales malas     → 401
+Login sin body                   → 400 o superior
+
+COMANDO PARA CORRER LOS TESTS
+------------------------------
+npm test
+
+RESULTADO ESPERADO
+------------------
+ℹ tests 8 | pass 8 | fail 0
+
+REGLA CLAVE
+-----------
+- assert.strictEqual usa === (compara valor Y tipo)
+- assert.equal usa == (puede ocultar bugs de tipos)
+- Siempre usar strictEqual
+- Si un test falla después de un cambio en el código,
+  significa que algo se rompió — no que el test está mal
