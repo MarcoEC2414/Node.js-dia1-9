@@ -9,4 +9,8 @@ BACKENT LISTA PARA SER CONSUMIDA POR EL FRONTED
 -Base de datos usada MongoDB
 
 
+<div align="center">
+
 ![dark-darkzeyn](https://github.com/user-attachments/assets/039b55c6-96ab-44b3-8308-c28e31f6680e)
+
+</div>
