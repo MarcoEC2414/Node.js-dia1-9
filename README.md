@@ -5,6 +5,8 @@
 > Para encontrar las capturas de TypeScript Dia1: entrar en la carpeta:
 > src
 
+ 
+integrantes:
 Ghian Marco Escalante Cardena
 
 Video de la tarea 1:
