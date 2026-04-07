@@ -7,6 +7,12 @@
 
 Ghian Marco Escalante Cardena
 
+Video de la tarea 1:
+
+https://www.mediafire.com/file/li1nth2rvatwrud/Demostracion-Del-Proyecto.mp4/file
+
+
+
 BACKENT LISTA PARA SER CONSUMIDA POR EL FRONTED 
 -Base de datos usada MongoDB
 
