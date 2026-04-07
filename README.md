@@ -1,5 +1,7 @@
 > [!IMPORTANT]
-> Cabe destacar que la Tarea 1 y la Tarea 2 presentan una funcionalidad idéntica en cuanto a lógica de negocio. Sin embargo, la Tarea 2 representa una evolución técnica mediante la migración a TypeScript, integrando tipado estático para mejorar la mantenibilidad y la detección de errores en tiempo de desarrollo leer documentacion 
+> Cabe destacar que la Tarea 1 y la Tarea 2 presentan una funcionalidad idéntica en cuanto a lógica de negocio. Sin embargo, la Tarea 2 representa una evolución técnica mediante la migración a TypeScript, integrando tipado estático para mejorar la mantenibilidad y la detección de errores en tiempo de desarrollo la documentacion que use fue ----->  [NodeJS_Diax.docx.pdf](https://github.com/user-attachments/files/26523804/NodeJS_Diax.docx.pdf)  -----  [🔵  TypeScript desde Cero.pdf](https://github.com/user-attachments/files/26523808/TypeScript.desde.Cero.pdf)
+
+
 
 Ghian Marco Escalante Cardena
 
