@@ -8,4 +8,5 @@ Ghian Marco Escalante Cardena
 BACKENT LISTA PARA SER CONSUMIDA POR EL FRONTED 
 -Base de datos usada MongoDB
 
-<img width="165" height="242" alt="image" src="https://github.com/user-attachments/assets/765c6fea-1eb9-4697-bc9b-2bbc5f395343" />
+
+![dark-darkzeyn](https://github.com/user-attachments/assets/039b55c6-96ab-44b3-8308-c28e31f6680e)
