@@ -1,0 +1,48 @@
+RESTAURANTE NODE — FLUJO DE AUTENTICACIÓN Y CRUD
+=================================================
+
+1. REGISTRO
+   POST /auth/register
+   Body: { "email": "admin@restaurante.com", "password": "clave123" }
+   → bcrypt encripta la contraseña y la guarda en MongoDB
+   → Respuesta: 201
+
+2. LOGIN
+   POST /auth/login
+   Body: { "email": "admin@restaurante.com", "password": "clave123" }
+   → bcrypt compara la contraseña con el hash guardado
+   → Si coincide, genera un JWT firmado válido por 24h
+   → Respuesta: 200 + token  ← COPIAR ESTE TOKEN
+
+3. AGREGAR PLATO (protegido)
+   POST /menu
+   Header: Authorization: Bearer <token>
+   Body: { "nombre": "Lomo saltado", "precio": 18, "stock": 5, "categoria": "Segundos" }
+   → verifyToken valida el JWT antes de llegar al controlador
+   → Si el token es válido, guarda el plato en MongoDB
+   → Respuesta: 201 + plato con _id  ← COPIAR EL _id
+
+4. VER MENÚ (libre, sin token)
+   GET /menu
+   → Devuelve todos los platos de la base de datos
+   → Respuesta: 200 + array de platos
+
+5. ACTUALIZAR PLATO (protegido)
+   PUT /menu/<_id>
+   Header: Authorization: Bearer <token>
+   Body: { "precio": 22, "stock": 10 }
+   → Actualiza solo los campos enviados
+   → Respuesta: 200 + plato actualizado
+
+6. ELIMINAR PLATO (protegido)
+   DELETE /menu/<_id>
+   Header: Authorization: Bearer <token>
+   → Elimina el plato de MongoDB
+   → Respuesta: 200 + plato eliminado
+
+POR QUÉ FUNCIONA ASÍ
+--------------------
+- GET /menu  → libre, cualquier cliente puede ver el menú
+- POST, PUT, DELETE → requieren token porque modifican datos
+- Sin token → 401 (verifyToken lo bloquea antes del controlador)
+- Token alterado o vencido → 401

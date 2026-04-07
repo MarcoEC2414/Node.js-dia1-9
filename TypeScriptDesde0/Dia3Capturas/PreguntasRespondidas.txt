@@ -1,0 +1,22 @@
+1.En el Sprint 0 tenías operaciones.js con funciones como buscarPlatoPorNombre() y 
+agregarPlato(). ¿Qué archivo de hoy es el equivalente de operaciones.js? ¿Qué cambió y qué 
+sigue igual? 
+
+-Es el menu.controller.js.
+Antes corrías funciones sueltas; ahora el controlador recibe peticiones (req) y envía respuestas (res).
+
+
+2.¿Qué hace app.use(express.json())? ¿Qué pasaría si lo quitas y haces un POST con datos? 
+
+-Es el traductor. Convierte el texto JSON que envías en un objeto JS dentro de req.body.
+Si lo quitas: Tu req.body llega vacío (undefined) y el POST fallará con un error 500 o 400
+
+3.Explica la diferencia entre un parámetro de ruta (:id) y un query param (?nombre=). ¿Cuándo 
+usarias cada uno en el restaurante?
+
+-:id (Ruta): Para algo único. Ejemplo: DELETE /menu/5 (Borrar el plato 5).
+?nombre= (Query): Para filtrar o buscar. Ejemplo: GET /menu/buscar?nombre=pizza.
+
+4.¿Qué es next() en un middleware? ¿Qué pasa si un middleware no lo llama? 
+
+-Es el "Pase Libre". Avisa que el middleware terminó y la petición puede seguir al controlador.

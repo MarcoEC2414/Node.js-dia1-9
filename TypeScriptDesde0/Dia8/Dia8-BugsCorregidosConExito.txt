@@ -1,0 +1,50 @@
+DÍA 8 — INTEGRACIÓN FINAL DEL RESTAURANTE
+==========================================
+
+¿QUÉ SE HACE?
+-------------
+No se aprende nada nuevo. Se demuestra que se entiende
+lo construido en los 7 días anteriores.
+Tres momentos: diagnosticar bugs, corregirlos y verificar con tests.
+
+BUG 1 — SEGURIDAD (menu.routes.js)
+------------------------------------
+Problema:  POST /menu no tenía verifyToken
+           Cualquiera podía agregar platos sin autenticarse
+Corrección: router.post('/', verifyToken, verificarDatosPlato, menuController.agregarPlato)
+
+BUG 2 — CONFIGURACIÓN (database/connection.js)
+------------------------------------------------
+Problema:  Importaba mongoUri de config pero luego usaba
+           process.env.MONGO_URI directo — ignoraba el import
+           dotenv no había cargado aún en ese punto
+Corrección: usar mongoUri (el import) directamente en mongoose.connect()
+
+BUG 3 — LÓGICA (services/plato.service.js)
+--------------------------------------------
+Problema:  findByIdAndUpdate sin { new: true }
+           El cliente recibía los datos ANTES de la actualización
+           aunque la actualización sí se guardaba en MongoDB
+Corrección: Plato.findByIdAndUpdate(id, data, { new: true })
+
+FUNCIONALIDAD NUEVA — FILTRO POR CATEGORÍA
+-------------------------------------------
+GET /menu/categoria/:categoria
+→ devuelve array de platos de esa categoría
+→ ruta libre, sin token
+→ si la categoría no existe devuelve array vacío []
+
+Archivos modificados en orden:
+1. plato.service.js   → método buscarPorCategoria(categoria)
+2. menu.controller.js → método filtrarPorCategoria(req, res)
+3. menu.routes.js     → GET /categoria/:categoria
+4. menu.test.js       → 2 tests nuevos para el filtro
+
+VERIFICACIÓN FINAL
+------------------
+npm test → 0 fallos, todos los tests pasan
+
+NOTA
+----
+Todos los bugs ya estaban corregidos desde el inicio
+en los archivos generados. El proyecto está íntegro y funcional.

@@ -1,0 +1,6 @@
+Miembros: 
+-Ghian Marco Escalante
+-Alessandro Trujillo
+
+Se reviso el codigo de mi compañero Alessandro. La logica de las funciones es clara,
+el manejo de arreglos es correcto y cumple con los requisitos tecnicos del dia 1.
