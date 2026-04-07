@@ -1,3 +1,6 @@
+> [!IMPORTANT]
+> Cabe destacar que la Tarea 1 y la Tarea 2 presentan una funcionalidad idéntica en cuanto a lógica de negocio. Sin embargo, la Tarea 2 representa una evolución técnica mediante la migración a TypeScript, integrando tipado estático para mejorar la mantenibilidad y la detección de errores en tiempo de desarrollo leer documentacion 
+
 Ghian Marco Escalante Cardena
 
 BACKENT LISTA PARA SER CONSUMIDA POR EL FRONTED 
