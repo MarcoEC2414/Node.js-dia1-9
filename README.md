@@ -1,4 +1,4 @@
-SGhian Marco Escalante Cardena
+Ghian Marco Escalante Cardena
 
 BACKENT LISTA PARA SER CONSUMIDA POR EL FRONTED 
 -Base de datos usada MongoDB
